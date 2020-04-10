@@ -7,7 +7,7 @@ const usuarisLib    = require('./servidor/usuaris.js')
 const utilsLib      = require('./servidor/utils.js')
 
 var app = express()
-var port = 3000
+var port = process.env.PORT || 3000
 var db = new dbLib()
 var productes = new productesLib()
 var usuaris = new usuarisLib()
