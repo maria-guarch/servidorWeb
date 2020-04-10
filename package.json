@@ -19,7 +19,7 @@
   "bundleDependencies": [],
   "main": "./server.js",
   "scripts": {
-    "start": "node ./server.js",
+    "start": "node server.js",
     "watch": "npm run app",
     "app": "supervisor --extensions node,js,html,css --ignore data,.git,node_modules --ignore-symlinks node -- ./server.js",
     "postinstall": ""
