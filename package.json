@@ -7,7 +7,7 @@
     "name": "Maria",
     "email": "mguarch1@xtec.cat"
   },
-  "homepage": "http://www.exemple.com/",
+  "homepage": "http://smx-mguarch.herokuapp.com",
   "private": true,
   "dependencies": {
     "crypto": "latest",
