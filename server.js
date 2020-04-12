@@ -60,10 +60,3 @@ async function cridaAJAX (crida, resposta) {
     default: resposta.json({ resultat: "ko", missatge: "Crida desconeguda" })
     }
 }
-
-
-
-
-
-
-
