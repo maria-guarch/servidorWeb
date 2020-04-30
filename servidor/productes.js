@@ -30,11 +30,25 @@ class Obj {
             try {
                 sql = 'CREATE TABLE productes (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, nom VARCHAR(50) NOT NULL, descripcio TEXT, preu INT(6), imatge VARCHAR(255))'
                 await db.promiseQuery(sql)
-                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge) VALUES ("Tele", "Tele molt xula", 800, "/web/imatges/producte-1.jpg")'
+                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge) VALUES ("Galicia", "Comunidad autonoma del noroeste de España", 50, "/web/imatges/viaje_galicia.jpg")'
                 await db.promiseQuery(sql)
-                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge) VALUES ("Batidora", "Batidora molt xula", 20, "/web/imatges/producte-2.png")'
+                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge) VALUES ("Andorra", "Pequeño principado independiente", 40, "/web/imatges/viaje_andorra.jpg")'
                 await db.promiseQuery(sql)
-                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge) VALUES ("Aspirador", "Aspirador molt xulo", 300, "/web/imatges/producte-3.jpg")'
+                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge) VALUES ("Berlin", "Capital de Alemania", 80, "/web/imatges/viaje_berlin.jpg")'
+                await db.promiseQuery(sql)
+                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge) VALUES ("California", "Estado occidental de EE.UU", 78, "/web/imatges/viaje_california.jpg")'
+                await db.promiseQuery(sql)
+                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge) VALUES ("Hong Kong", "Territorio autonomo", 65, "/web/imatges/viaje_hongkong.jpg")'
+                await db.promiseQuery(sql)
+                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge) VALUES ("Londres", "Capital de Inglaterra y Reino Unido", 84, "/web/imatges/viaje_londres.jpg")'
+                await db.promiseQuery(sql)
+                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge) VALUES ("Los Angeles", "Es el nucleo de la industria televisiva y cinematografica", 75, "/web/imatges/viaje_losangeles.jpg")'
+                await db.promiseQuery(sql)
+                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge) VALUES ("Madrid", "Capital de España", 80, "/web/imatges/viaje_madrid.jpg")'
+                await db.promiseQuery(sql)
+                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge) VALUES ("Paris", "Capital de Francia", 86, "/web/imatges/viaje_paris.jpg")'
+                await db.promiseQuery(sql)
+                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge) VALUES ("Roma", "Capital de Italia", 76, "/web/imatges/viaje_roma.jpg")'
                 await db.promiseQuery(sql)
             } catch (e) {
                 console.error(e)
@@ -42,13 +56,23 @@ class Obj {
             }
         }
     
-        // Demana la informació de productes
-        try {
-            sql = 'SELECT * FROM productes'
-            taula = await db.promiseQuery(sql)
-        } catch (e) {
-            console.error(e)
-            return result.json({ resultat: "ko", missatge: "Error, funció llistatProductes: ha fallat la crida a les dades"})  
+       // Demana la informació de productes
+       if (data.id) {
+            try {
+                sql = 'SELECT * FROM productes WHERE id=' + data.id
+                taula = await db.promiseQuery(sql)
+            } catch (e) {
+                console.error(e)
+                return result.json({ resultat: "ko", missatge: "Error, funció llistatProductes: ha fallat la crida a les dades"})  
+            }
+        } else {
+            try {
+                sql = 'SELECT * FROM productes'
+                taula = await db.promiseQuery(sql)
+            } catch (e) {
+                console.error(e)
+                return result.json({ resultat: "ko", missatge: "Error, funció llistatProductes: ha fallat la crida a les dades"})  
+            }
         }   
     
         // Si hem aconseguit dades corectament, tornem la taula resultant
@@ -63,3 +87,9 @@ class Obj {
 // Export
 module.exports = Obj
 
+/*
+function expandeiximg() {
+    let divimg = document.getElementById('productes1 img');
+    divimg.style.width = '500px';
+}
+*/

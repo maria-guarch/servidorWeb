@@ -1,4 +1,4 @@
-'use strict'
+﻿'use strict'
 const express       = require('express')
 const path          = require('path')
 const dbLib         = require('./servidor/db.js')
@@ -7,7 +7,7 @@ const usuarisLib    = require('./servidor/usuaris.js')
 const utilsLib      = require('./servidor/utils.js')
 
 var app = express()
-var port = process.env.PORT || 3000
+var port = process.env.PORT || 3002
 var db = new dbLib()
 var productes = new productesLib()
 var usuaris = new usuarisLib()
@@ -60,3 +60,10 @@ async function cridaAJAX (crida, resposta) {
     default: resposta.json({ resultat: "ko", missatge: "Crida desconeguda" })
     }
 }
+
+
+
+
+
+
+

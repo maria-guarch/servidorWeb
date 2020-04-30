@@ -1,4 +1,4 @@
-'use strict'
+﻿'use strict'
 var mysql   = require('mysql')
 
 // Crea la base de dades amb:
@@ -18,9 +18,9 @@ class Obj {
 
         this.host           = '109.237.25.44'
         this.port           = 3306
-        this.db             = 'serverDB'
-        this.usr            = 'user'
-        this.pwd            = '8ase2pwd'
+        this.db             = 'serverDB_arodriguez'
+        this.usr            = 'arodriguez'
+        this.pwd            = '2bsg8lts'
         this.pool           = null
 
         this.logCyan        = '\x1b[36m%s\x1b[0m '

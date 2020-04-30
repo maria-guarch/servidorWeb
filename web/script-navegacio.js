@@ -27,8 +27,11 @@ class ObjNavegacio {
 
     // Amaga la secció anterior i mostra la nova
     mostraSeccio (seccioNova) {
-        let refActual = document.getElementById(this.seccioActual),
-            refNova = document.getElementById(seccioNova)
+        let idActual = this.seccioActual.split('&')[0],
+            arr = seccioNova.split('&'),
+            idNova = arr[0],
+            refActual = document.getElementById(idActual),
+            refNova = document.getElementById(idNova)
 
         // S'amaga la seccio que estava visible i es mostra la que s'ha demanat
         refActual.style.display = 'none'
@@ -44,8 +47,26 @@ class ObjNavegacio {
         this.dadesSeccio = null
 
         // Executa la funció de càrrega d'aquesta secció si és necessari
-        iniciaSeccio(seccioNova)
+        iniciaSeccio(idNova, arr[1])
     }
+    
+    /* MENU MOVIL */
+
+    hiddenmenu() {
+
+        let menu = document.getElementById('botones');   
+        
+        if (menu.style.display == "block"){
+        
+        
+        menu.style.display = "none";
+        
+        }else{
+        
+        menu.style.display = "block";
+        }
+    }
+
 }
 
-
+    

@@ -1,6 +1,6 @@
 /* Definicions de classes utils genèriques */
 .desktop { display: flex !important; }
-.mobile  { display: flex !important; }
+.mobile  { display: flex !important;}
 @media only screen and (max-device-width: 599px) { .desktop { display: none !important; } }
 @media only screen and (min-device-width: 600px) { .mobile  { display: none !important; } }
 .flex       { display: flex; }
@@ -10,55 +10,390 @@
 .halfWidth  { max-width: 50%; }
 .botoIcona  { cursor: pointer; }
 
+/* Menu */
+
+#frontendMenuWeb {
+    background-image: url(imatges/fondomenu.jpg);
+    background-size: cover;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    padding: 40px;
+    width: calc(100% - 86px);
+    height: 50px;
+    border: solid 3px black;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+#frontendMenuMobil {
+    background-image: url(imatges/fondomenu.jpg);
+    background-size: cover;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+
+
 /* Definicions específiques */
 table, th, td {
     border-collapse: collapse;
     border: 1px solid black;
 }
-
-.botoMenu {
-    color: blue;
-    cursor: pointer;
-    margin: 0 16px;
-}
-
-.botoMenu:hover {
-    text-decoration: underline;
-}
-
 body {
     font-family: "Open Sans";
 }
-
+body > div {
+    display: none;
+}
 body > #frontendHome {
     display: flex;
 }
 
-body > #frontendPresentacio {
+.sticky {
+    position: sticky;
+    top: 0;
+}
+.margin {
+    margin: 10px;
+}
+.fondoweb {
+    background-image: url(imatges/fondoweb.jpeg);
+}
+
+/* Menu estilos */
+
+.botoMenu {
+    color: yellow;
+    cursor: pointer;
+    margin: 33px 20px;
+    font-size: 20px;
+}
+.menumar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-image: url(imatges/palmeras.jpg);
+    background-size: inherit;
+    width: 100%;
+    height: 200px;
+    border: solid 3px black;
+    width: calc(100% - 6px);
+}
+.divmenu {
+    display: flex;
+    background-color: slategrey;
+    width: 100%;
+    height: 50px;
+    position: sticky;
+    top: 0px;
+    justify-content: space-between;
+    z-index: 100;
+}
+.botoMenu:hover {
+    color: teal;
+    font-size: 25px; 
+}
+.titulo {
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: oblique;
+    margin-left: 200px;
+    
+}
+.titulo2 {
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: oblique; 
+    margin-right: 25px;   
+}
+.menuicono {
+    align-items: center;
+}
+.boton {
+    background-color: darkgray;
+    height: 51px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.menumobile {
+    font-size: 20px;
+    align-items: center;
+    margin-top: 5px;
+    margin-left: 20px;
+    font-style: oblique;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+ 
+ /* Presentació */
+
+#frontendPresentacio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     display: none;
 }
 
-body > #frontendProductes {
-    display: none;
-}
-
-body > #frontendProductes > #productesContinguts {
+#frontendPresentacio H4 {
+    background-color: gold;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: row;
+    font-size: 2em;
+    height: 2em;
     width: 100%;
 }
-
-body > #frontendContacte {
-    display: none;
+.fuentepre {
+    text-align: center;
+}
+.imgpre {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.imgpre2 {
+    margin: 0 1em;
+}
+@media only screen and (max-device-width: 599px) {
+    #frontendPresentacio H4 {
+        font-size: 1.5em;
+        height: 4.5em;
+    }
+    .imgpre {
+        flex-direction: column;
+    }
+    .imgpre2 {
+        margin: 1em 0;
+    }
 }
 
-body > #backofficeUsuaris {
-    display: none;
+.targetes {
+    display: flex;
+    flex-direction: row;
+    padding: 20px 0;
+    flex-wrap: wrap;
+    max-width: calc(100% - 20px);
+    z-index: 0;
+
 }
 
-body > #backofficeProductes {
-    display: none;
+.targetes div {
+    margin: 10px;
 }
 
-body > #popups {
+.demo-card-square > .mdl-card__titleA {
+    background: url('https://mochilerosentailandia.com/wp-content/uploads/2018/07/japon-primavera.jpg') center / cover;
+}
+.demo-card-square > .mdl-card__titleB {
+    background: url('https://pipr.restplass.no/rg/-/scale_crop/980x400/center/https://storage.googleapis.com/rg-wp-assets/2019/02/b6/4f/b6/bc/11/87/dd/e4/spania-barcelona-view-beach-1000x667.jpg') center / cover;
+}
+.demo-card-square > .mdl-card__titleC {
+    background: url('https://elviajero.elpais.com/elviajero/imagenes/2019/05/09/actualidad/1557394830_938041_1557396424_noticia_grande.jpg') center / cover;
+}  
+
+.cardtitle {
+    background-color: black;
+    display: flex;
+    bottom: 0;
+    vertical-align: bottom;
+}
+.presentacio1 {
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 2em;
+}
+.colortitle {
+    background: gold;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.slider {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    margin-top: 30px;
+}
+.slider ul {
+    display: flex;
+    padding: 0;
+    width: 400%;
+    animation: cambio 20s infinite alternate;
+}
+.slider il:hover {
+    animation-play-state: paused;
+    cursor: pointer;
+}
+.slider li {
+    width: 100%;
+    list-style: none;
+}
+.slider img {
+    width: 100%;
+    height: 500px;
+}
+
+@keyframes cambio {
+    0%{margin-left: 0%;}
+    20%{margin-left: 0%;}
+
+    25%{margin-left:-100%;}
+    45%{margin-left:-100%;}
+
+    50%{margin-left:-200%;}
+    70%{margin-left:-200%;}
+
+    75%{margin-left:-300%;}
+    100%{margin-left:-300%;}
+}
+
+/* Contacte */
+
+#frontendContacte {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 2em 0 0 0;
+    display: none;
+}
+#frontendContacte p {
+    background-color: gold;
+    font-size: 2em;
+    height: 2em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.expContactes {
+    padding: 0 0 1em 0;
+    font-size: 1.5em;
+}
+.etiqueta {
+    font-size: 2em;
+}
+
+/* Productes */
+
+#frontendProductes {
+    display: none;
+    background-color: cornflowerblue;
+}
+.productes1 {
+    justify-content: center;
+    align-items: center;
+    margin: 2em;
+}
+.productes1 img {
+    box-shadow: 5px 7px 9px 3px midnightblue
+}
+.productes2 {
+    text-align: center;
+    font-size: 1em;
+    font-weight: normal;
+    background-color: cornsilk;
+    width: 25em;
+    height: 11em;
+    border: 2px solid black;
+    cursor: pointer;
+}
+.productesexp {
+    background-image: url(imatges/cielop.jpg);
+    width: 98%;
+    background-size: cover;
+    border: 4px solid gold
+}
+#productesContiguts {
+    display: flex;
+    
+}
+.width100 {
+    width: 100%;
+}
+@media only screen and (min-device-width: 599px) {
+    .productes1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap
+    }
+    .productesexp {
+        width: 1341px;
+    }
+}
+@media only screen and (max-device-width: 599px) {
+    .productes1 img {
+        width: 25em;
+        margin: 1em 0;
+    }
+    
+}
+#frontendproducte {
+    align-items: center;
+    justify-content: center;
+    background-color: cornflowerblue;
+}
+.detall {
+    margin: 4em;
+    border: solid black;
+    background-color: cornsilk;
+}
+
+.detall h3 {
+    text-align: center;
+    font-size: 4em;
+    margin: 0.5em;
+}
+.detall div {
+    text-align: center;
+    font-size: 1.5em;
+    padding: 0 0 0.5em 0;
+}
+
+.detalltext {
+    background-color: cornsilk;
+}
+@media only screen and (min-device-width: 599px) {
+    .detallimg img{
+        width: 900px;
+        height: 400px;
+    } 
+}
+@media only screen and (max-device-width: 599px) {
+    .detall h3 {
+        text-align: center;
+        font-size: 2em;
+        margin: 0.5em;
+    }
+    .detall div {
+        text-align: center;
+        font-size: 1em;
+        padding: 0 0 0.5em 0;
+    }
+}
+
+/* Otros */
+
+#productesContinguts {
+    width: 100%;
+}
+#popups {
     background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
     display: none;
@@ -69,11 +404,17 @@ body > #popups {
     height: 100%;
     width: 100%;
 }
-
 #popups > div {
     border: solid 1px black;
     background-color: lightcyan;
     display: none;
 }
-
-
+.footer {
+    background-color: mediumaquamarine;
+    height: 4em;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
